@@ -21,12 +21,13 @@ angular.module('busroute')
     }]
     main.toggleLeft = buildToggler('left');
     main.navigateTo = navigateTo;
+    main.close = close;
     main.back = function() {
       window.history.back();
     }
 
     $rootScope.$on('$stateChangeSuccess', function(ev, state) {
-      if (state.data && state.data.title){
+      if (state.data && state.data.title) {
         main.currentView = state.data.title;
       }
       if (state.data && state.data.showBack) {
@@ -36,7 +37,14 @@ angular.module('busroute')
       }
     });
 
+    function close() {
+      console.log('im closing im closing');
+      toggleLeft.close();
+    }
+
     function navigateTo(route) {
+      console.log('navigating');
+      $mdSidenav('left').close();
         main.currentView = route.description;
         $state.go(route.route);
       }

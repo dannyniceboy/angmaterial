@@ -3,7 +3,7 @@
 angular.module('busroute')
   .controller('UserCtrl', UserCtrl);
 
-function UserCtrl($state, uiGmapGoogleMapApi) {
+function UserCtrl($state, uiGmapGoogleMapApi, $interval) {
   var user = this;
   var routePoints = [{
     "device_id": "1250612316",
@@ -306,6 +306,21 @@ function UserCtrl($state, uiGmapGoogleMapApi) {
     	}
     }
   };
+
+  var busIndex = 0;
+  $interval(function() {
+    if (busIndex >= routePoints.length) {
+      busIndex = 0;
+    }
+    user.map.busPosition.id = busIndex;
+    user.map.busPosition.coords = {
+      latitude: routePoints[busIndex].latitude,
+      longitude: routePoints[busIndex].longitude
+    };
+    busIndex++;
+    console.log('im updating')
+  }, 1500);
+
   uiGmapGoogleMapApi.then(function(maps) {
     console.log('googlemap', maps);
     user.map.markers = routePoints;

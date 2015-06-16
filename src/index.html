@@ -34,7 +34,7 @@
     </md-toolbar>
     <md-content>
       <md-list>
-        <md-list-item ng-repeat="option in main.options" ng-click='main.navigateTo(option)'>
+        <md-list-item ng-repeat="option in main.options" ng-click='main.navigateTo(option) && main.close()'>
           <p>{{ option.description }}</p>
           <md-icon>keyboard_arrow_right</md-icon>
         </md-list-item>
