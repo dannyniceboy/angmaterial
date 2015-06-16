@@ -1,0 +1,24 @@
+<md-list>
+  <md-content layout-padding>
+    <md-list-item class="md-2-line">
+      <div class="md-list-item-text">
+        <p>Bus 1: 4 Minutes</p>
+        <p>Bus 2: 19 Minutes</p>
+      </div>
+      <md-button class="md-raised md-primary" ui-sref='buy'>BUY</md-button>
+      <md-button class="md-raised" ui-sref='showpass'>SHOW</md-button>
+    </md-list-item>
+  </md-content>
+</md-list>
+<md-content layout-padding>
+  <!--md-whiteframe class="md-whiteframe-z1" layout layout-align="center center" -->
+  <ui-gmap-google-map center='user.map.center' zoom='user.map.zoom'>
+    <ui-gmap-marker coords='user.map.busPosition.coords' icon="'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'" idKey="'bangbus'">
+    </ui-gmap-marker>
+<!--     <ui-gmap-markers models='user.map.markers' coords='"self"'>
+    </ui-gmap-markers> -->
+    <ui-gmap-polyline path="user.map.markers"></ui-gmap-polylines>
+    </ui-gmap-polyline>
+  </ui-gmap-google-map>
+  <!--/md-whiteframe-->
+</md-content>

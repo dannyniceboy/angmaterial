@@ -1,0 +1,48 @@
+<md-content layout-padding>
+  <div layout="column" layout-fill>
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title">Ride Options</h2>
+        <md-radio-group ng-model="buy.type" class="md-primary">
+          <md-radio-button value='day'>
+            Day Pass ($7.99)
+          </md-radio-button>
+          <md-radio-button value='weekend'>
+            Weekend Pass ($15.00)
+          </md-radio-button>
+          <md-radio-button value='month'>
+            Month Pass ($25.00)
+          </md-radio-button>
+        </md-radio-group>
+      </md-card-content>
+    </md-card>
+    <br>
+    <md-card>
+      <md-card-content>
+        <h2 class="md-title">Payment Information</h2>
+        <div layout='row'>
+          <md-input-container flex>
+            <label>Card Number:</label>
+            <input ng-model="user.title">
+          </md-input-container>
+        </div>
+        <div layout='row'>
+          <md-input-container flex="70">
+            <label>Expiration Date:</label>
+            <input ng-model="user.email" type="email">
+          </md-input-container>
+          <md-input-container flex="30">
+            <label>CVC:</label>
+            <input ng-model="user.email" type="email">
+          </md-input-container>
+        </div>  
+        <div layout='row'>
+          <h3>Total: $7.99</h3>
+        </div>
+      </md-card-content>
+      <div class="md-actions" layout="row" layout-align="end center">
+        <md-button class='md-raised md-primary' ng-click='buy.purchase()'>Purchase</md-button>
+        <md-button class='md-raised '>Cancel</md-button>
+      </div>
+    </md-card>
+</md-content>
