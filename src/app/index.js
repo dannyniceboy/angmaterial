@@ -26,7 +26,40 @@ angular.module('busroute', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
           title: 'Buy Pass',
           showBack: true
         }
-      });
+      }).state('manage', {
+        url: '/manage',
+        templateUrl: 'app/admin/manage.html',
+        controller: 'ManageCtrl as manage',
+        data: {
+          title: 'Manage',
+          showBack: true
+        }
+      }).state('drive', {
+        url: '/drive',
+        templateUrl: 'app/admin/drive/drive.html',
+        controller: 'DriveCtrl as drive',
+        data: {
+          title: 'Drive',
+          showBack: true
+        }
+      }).state('guide', {
+        url: '/guide',
+        templateUrl: 'app/admin/guide/guide.html',
+        controller: 'GuideCtrl as guide',
+        data: {
+          title: 'Guide',
+          showBack: true
+        }
+      }).state('track', {
+        url: '/track',
+        templateUrl: 'app/admin/track/track.html',
+        controller: 'TrackCtrl as user',
+        data: {
+          title: 'Track',
+          showBack: true
+        }
+      })
+      ;
 
     uiGmapGoogleMapApiProvider.configure({
       key: 'AIzaSyD9fUURN1rqGk38dliGNKWj8vYi-7Ds5tY',
