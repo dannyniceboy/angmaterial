@@ -4,80 +4,85 @@
 </div>
 <md-divider></md-divider>
 <md-list>
-  <md-content layout-padding>
-    <md-list-item class="md-2-line">
-      <div >
-        <div class="md-display-3" style="color:#FFA000;padding: 0 0.3em;text-align: center;">Bus 1<br/> 5 Minutes Early</div>
+  <md-content layout="row" layout-wrap>
+      <md-content >
+        <div class="md-display-1" style="color:#FFA000;padding: 1em 1em;text-align: center;">Bus 1<br/> 5 Minutes Early</div>
         <a ng-show="!busDisplay1" ng-click="busDisplay1= !busDisplay1">+Contact Driver</a>
         <a ng-show="busDisplay1" ng-click="busDisplay1= !busDisplay1">Send</a>
         <md-input-container ng-show="busDisplay1" flex>
           <label>Contact Driver</label>
           <textarea ng-model="driver.message" columns="1" md-maxlength="150"></textarea>
         </md-input-container>
-      </div>
-      <div>
-        <div class="md-display-3" style="color:#AF0000;padding: 0 0.3em;text-align: center;">Bus 2<br/> 10 Minutes Behind</div>
+        <br/>
+        <a ng-show="!guideDisplay1" ng-click="guideDisplay1= !guideDisplay1">+Contact Guide</a>
+        <a ng-show="guideDisplay1" ng-click="guideDisplay1= !guideDisplay1">Send</a>
+        <md-input-container ng-show="guideDisplay1" flex>
+          <label>Contact Guide</label>
+          <textarea ng-model="guide.message" columns="1" md-maxlength="150"></textarea>
+        </md-input-container>
+      </md-content>
+      <md-content>
+        <div class="md-display-1" style="color:#AF0000;padding: 1em 1em;text-align: center;">Bus 2<br/> 10 Minutes Behind</div>
         <a ng-show="!busDisplay2" ng-click="busDisplay2= !busDisplay2">+Contact Driver</a>
         <a ng-show="busDisplay2" ng-click="busDisplay2= !busDisplay2">Send</a>
         <md-input-container ng-show="busDisplay2" flex>
           <label>Contact Driver</label>
           <textarea ng-model="driver.message" columns="1" md-maxlength="150"></textarea>
         </md-input-container>
-      </div>
-      <div>
-        <div class="md-display-3" style="color:#00AF00;padding: 0 0.3em;text-align: center;">Bus 3<br/> On Time</div>
+      </md-content>
+      <md-content>
+        <div class="md-display-1" style="color:#00AF00;padding: 1em 1em;text-align: center;">Bus 3<br/> On Time</div>
         <a ng-show="!busDisplay3" ng-click="busDisplay3= !busDisplay3">+Contact Driver</a>
         <a ng-show="busDisplay3" ng-click="busDisplay3= !busDisplay3">Send</a>
         <md-input-container ng-show="busDisplay3" flex>
           <label>Contact Driver</label>
           <textarea ng-model="driver.message" columns="1" md-maxlength="150"></textarea>
         </md-input-container>
-      </div>
-    </md-list-item>
+      </md-content>
   </md-content>
 </md-list>
 
 
 <md-content layout-padding>
-  <md-content layout-padding>
+  <md-content layout-center>
     <div>
-      <md-content class="md-padding">
+      <md-content class="md-center">
         <md-tabs md-dynamic-height md-border-bottom>
           <md-tab label="one">
-            <md-content class="md-padding" layout="column 2">
-                <md-content flex="33" flex-sm="66">
+            <md-content class="md-padding" layout="row" layout-wrap>
+                <md-content >
                   <h1 class="md-display-2">Bus One</h1>
                   <p>Current Riders : 15 </p>
                   <p>Last Hour Riders : 39 </p>
                   <p>Nightly Riders : 41 </p>
               </md-content>
-              <md-content flex="66" flex-sm="33">
+              <md-content >
                 <img src="/assets/images/Capture.png"/>
               </md-content>
             </md-content>
           </md-tab>
           <md-tab label="two">
-            <md-content class="md-padding" layout="column 2">
-                <md-content flex="33" flex-sm="66">
+            <md-content class="md-padding" layout="row" layout-wrap>
+             <md-content>
               <h1 class="md-display-2">Bus Two</h1>
               <p>Current Riders : 2 </p>
               <p>Last Hour Riders : 89 </p>
               <p>Nightly Riders : 101 </p>
             </md-content>
-            <md-content flex="66" flex-sm="33">
+            <md-content >
               <img src="/assets/images/Capture.png"/>
             </md-content>
           </md-content>
         </md-tab>
-          <md-tab label="one">
-            <md-content class="md-padding" layout="column 2">
-                <md-content flex="33" flex-sm="66">
+          <md-tab label="three">
+            <md-content class="md-padding" layout="row" layout-wrap>
+                <md-content >
               <h1 class="md-display-2">Bus Three</h1>
               <p>Current Riders : 30 </p>
               <p>Last Hour Riders : 45 </p>
               <p>Nightly Riders : 120 </p>
             </md-content>
-            <md-content flex="66" flex-sm="33">
+            <md-content>
               <img src="/assets/images/Capture.png"/>
             </md-content>
           </md-content>
